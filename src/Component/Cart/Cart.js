@@ -3,16 +3,20 @@ import image from './img/my.png'
 import './Cart.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addToDb } from '../../utilities/fakedb';
 
 
 
 
-const Cart = ({times,}) => {
+
+const Cart = ({times}) => {
+ const {id}=times
+ 
   const[button,setButton]=useState([])
     const handleAddButton=(e)=>{
        
         setButton(e.target.innerText)
-        
+       addToDb(e.target.innerText) 
     }
     const notify = () => {
         toast("Wow so easy!")

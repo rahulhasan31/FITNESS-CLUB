@@ -1,53 +1,66 @@
-// use local storage to manage cart data
-const addToDb = id =>{
-    let shoppingCart = {};
 
-    //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+const addToDb = id =>{
+    let timeCart = {};
+
+
+
+
+
+    const storedCart = localStorage.getItem('Times');
     if(storedCart){
-        shoppingCart = JSON.parse(storedCart);
+        timeCart = JSON.parse(storedCart);
     }
 
-    // add quantity
-    const quantity = shoppingCart[id];
+   
+
+
+
+    const quantity = timeCart[id];
     if(quantity){
         const newQuantity = quantity + 1;
-        shoppingCart[id] = newQuantity;
+        timeCart[id] = newQuantity;
     }
     else{
-        shoppingCart[id] = 1;
+        timeCart[id] = 1;
     }
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+    localStorage.setItem('Times', JSON.stringify(timeCart));
 }
 const getStoreCart=()=>{
-    let shoppingCart = {};
+    let timeCart = {};
 
-    //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+   
+    const storedCart = localStorage.getItem('Times');
     if(storedCart){
-        shoppingCart = JSON.parse(storedCart);
+        timeCart = JSON.parse(storedCart);
     }
-return shoppingCart;
+return timeCart;
 }
 
+
+
+
 const removeFromDb = id =>{
-    const storedCart = localStorage.getItem('shopping-cart');
+    const storedCart = localStorage.getItem('Times');
     if(storedCart){
-        const shoppingCart = JSON.parse(storedCart);
-        if(id in shoppingCart){
-            delete shoppingCart[id];
-            localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+        const timeCart = JSON.parse(storedCart);
+        if(id in timeCart){
+            delete timeCart[id];
+            localStorage.setItem('Times', JSON.stringify(timeCart));
         }
     }
 }
 
-const deleteShoppingCart = () =>{
-    localStorage.removeItem('shopping-cart');
+const deleteTimeCart = () =>{
+    localStorage.removeItem('Times');
 }
+
+
+
+
 
 export {
     addToDb, 
     getStoreCart,
     removeFromDb,
-    deleteShoppingCart
+    deleteTimeCart
 }

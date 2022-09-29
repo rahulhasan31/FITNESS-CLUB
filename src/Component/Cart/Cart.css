@@ -12,3 +12,22 @@ font-weight: 700;
 .btn{
     width: 100%;
 }
+
+.cart{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: auto;
+
+}
+
+@media only screen and (max-width :800px){
+    .cart{
+       width: 100PX;
+       
+        
+        
+    }
+    .carts{
+        display: none;
+    }
+}

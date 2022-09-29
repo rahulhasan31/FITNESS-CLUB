@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import image from './img/my.png'
 import './Cart.css'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Cart = ({times,}) => {
   const[button,setButton]=useState([])
@@ -8,7 +10,10 @@ const Cart = ({times,}) => {
        
         setButton(e.target.innerText)
     }
-    
+    const handleToast=()=>{
+       
+        console.log( toast("Wow so easy!"));
+    }
 
     
     let total=0
@@ -17,7 +22,7 @@ const Cart = ({times,}) => {
     }
     
     return (
-        <div className=''>
+        <div className='cart '>
               <div className='col '>
               <div className='card h-100"'>
                 <div className="img-flex d-flex ">
@@ -60,12 +65,48 @@ const Cart = ({times,}) => {
                 <h2>Exercise time:{total} <small>S</small></h2>
                 <h2>Break time:{button} </h2>
                 
-                <button type="button" className="btn btn-primary mt-5">Activity Completed</button>
+                <button type="button" className="btn btn-primary mt-5" onClick={handleToast}>Activity Completed</button>
                </div>
+               
                
               </div>
               
               </div>
+                       
+         <div className='carts col m-2'>
+              <div className='card h-100"'>
+                
+                <div className="card-body">
+        <h5 className="card-title"></h5>
+        <p className="card-text">how to does react work </p>
+        <p>ReactJS divides the UI into isolated reusable pieces of code known as components. React components work similarly to JavaScript functions as they accept arbitrary inputs called properties or props. It's possible to have as many components as necessary without cluttering your code.</p>
+        
+        </div>
+              </div>
+              </div>
+         <div className='carts col m-2'>
+              <div className='card h-100"'>
+                
+                <div className="card-body">
+        <h5 className="card-title"></h5>
+        <p className="card-text">props and state difference</p>
+        <p>Props are used to pass data from one component to another. The state is a local data storage that is local to the component only and cannot be passed to other components. The this. setState property is used to update the state values in the component.</p>
+        
+        </div>
+              </div>
+              </div>
+         <div className='carts col m-2'>
+              <div className='card h-100"'>
+                
+                <div className="card-body">
+        <h5 className="card-title"></h5>
+        <p className="card-text">For Age : </p>
+        <p>Time required : s</p>
+        
+        </div>
+              </div>
+              </div>
+
         </div>
     );
 };

@@ -47,7 +47,8 @@ const Gyms = () => {
                 ></GymCard>)
              }
             </div>
-            <div className='row row-cols-1 row-cols-md-3   h-100'>
+            <div className='row row-cols-1 row-cols-md-3  '>
+              
            
             <Cart times={times}
           

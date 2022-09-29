@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import image from './img/my.png'
 import './Cart.css'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 
 const Cart = ({times,}) => {
@@ -9,11 +12,11 @@ const Cart = ({times,}) => {
     const handleAddButton=(e)=>{
        
         setButton(e.target.innerText)
+        
     }
-    const handleToast=()=>{
-       
-        console.log( toast("Wow so easy!"));
-    }
+    const notify = () => {
+        toast("Wow so easy!")
+    };
 
     
     let total=0
@@ -23,6 +26,7 @@ const Cart = ({times,}) => {
     
     return (
         <div className='cart '>
+
               <div className='col '>
               <div className='card h-100"'>
                 <div className="img-flex d-flex ">
@@ -35,7 +39,7 @@ const Cart = ({times,}) => {
                 </div>
                 <div className="card-body h-100" >
         
-        <h1 className='m-5'>Add A Break</h1>
+        <h2 className='m-5'>Add A Break</h2>
         <div className='d-flex  gap-1 mb-5 mt-5 ms-4  '>
             
             <div >
@@ -65,7 +69,7 @@ const Cart = ({times,}) => {
                 <h2>Exercise time:{total} <small>S</small></h2>
                 <h2>Break time:{button} </h2>
                 
-                <button type="button" className="btn btn-primary mt-5" onClick={handleToast}>Activity Completed</button>
+                <button type="button" className="btn btn-primary mt-5" onClick={notify}>Activity Completed</button>
                </div>
                
                
@@ -100,14 +104,23 @@ const Cart = ({times,}) => {
                 
                 <div className="card-body">
         <h5 className="card-title"></h5>
-        <p className="card-text">For Age : </p>
-        <p>Time required : s</p>
+        <p className="card-text">What is the use case for useEffect  </p>
+        <p>                            useEffect use cases
+                            1. Running once on mount: fetch API data
+                            2. Running on state change: validating input field
+                            3. Running on state change: live filtering
+                            4. Running on state change: trigger animation on new array value
+                            5. Running on props change: update paragraph list on fetched API data update
+                            6. Running on props change: updating fetched API data to get BTC updated price etc.</p>
         
         </div>
               </div>
               </div>
+       
 
+       <ToastContainer/>
         </div>
+       
     );
 };
 

@@ -6,6 +6,14 @@ import './Gyms.css'
 const Gyms = () => {
     const [gyms, setGyms]=useState([])
     const [times, setTime]=useState([])
+    
+
+
+    
+      
+          
+    
+
     useEffect(()=>{
       fetch('data.json')
       .then(res=>res.json())
@@ -19,10 +27,10 @@ const Gyms = () => {
     }
    
     return (
-        <div className='gyms '>
-            <h1>FITNESS HEROES{gyms.length}</h1>
+        <div className='gyms bg-success p-2 text-dark bg-opacity-50'>
+            <h1>FITNESS HEROES</h1>
              <p>Select today’s exercise</p>
-            <div className="row row-cols-1 row-cols-md-3 g-4 m-5">
+            <div className="row row-cols-1 row-cols-md-3 ">
              
              {
                 gyms.map(gym=><GymCard
@@ -39,9 +47,11 @@ const Gyms = () => {
                 ></GymCard>)
              }
             </div>
-            <div className='row row-cols-1 row-cols-md-3 g-4 m-5 h-100'>
+            <div className='row row-cols-1 row-cols-md-3   h-100'>
            
-            <Cart times={times}></Cart>
+            <Cart times={times}
+          
+            ></Cart>
             </div>
         </div>
     );

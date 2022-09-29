@@ -10,7 +10,7 @@ const GymCard = ({gym,handleAddToTime}) => {
         <div className='container'>
            
                    
-         <div className='col'>
+         <div className='col m-2'>
               <div className='card h-100"'>
                 <img src={picture} className='card-img-top' alt="" />
                 <div className="card-body">

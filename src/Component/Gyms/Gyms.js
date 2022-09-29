@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import GymCard from '../GymCard/GymCard';
 import './Gyms.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const Gyms = () => {
     const [gyms, setGyms]=useState([])
@@ -28,7 +30,8 @@ const Gyms = () => {
    
     return (
         <div className='gyms bg-success p-2 text-dark bg-opacity-50'>
-            <h1>FITNESS HEROES</h1>
+            <h1> FITNESS HEROES</h1>
+            <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
              <p>Select today’s exercise</p>
             <div className="row row-cols-1 row-cols-md-3 ">
              
